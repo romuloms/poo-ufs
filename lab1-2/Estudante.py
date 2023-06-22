@@ -5,10 +5,13 @@ class Estudante:
         self.__creditos = creditos
 
     def getNome(self):
-        print(self.__nome)
+        print("nome: " + self.__nome)
 
     def getMatricula(self):
-        print(self.__matricula)
+        print("matricula: " + self.__matricula)
 
     def getCreditos(self):
-        print(self.__creditos)
+        print("creditos: " + str(self.__creditos))
+
+    def addCreditos(self, creditos):
+        self.__creditos += creditos

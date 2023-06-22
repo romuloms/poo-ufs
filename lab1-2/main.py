@@ -8,4 +8,6 @@ aluno1 = Estudante(nome, matricula)
 
 aluno1.getNome()
 aluno1.getMatricula()
+
+aluno1.addCreditos(120)
 aluno1.getCreditos()
