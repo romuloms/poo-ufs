@@ -15,6 +15,10 @@ def pesquisaBinaria(lista, item):
     return None
 
 
-minhalista = [2, 3, 5, 10, 15, 20, 23, 50, 85, 98, 100]
+listaDeEntrada = input("digite os elementos separados por espaco: ")
 
-print(pesquisaBinaria(minhalista, 20))
+lista = [int(elemento) for elemento in listaDeEntrada.split()]
+elementoDeEntrada = input("digite o elemento que deseja buscar na lista: ")
+elementoInteiro = int(elementoDeEntrada)
+
+print(pesquisaBinaria(lista, elementoInteiro))
