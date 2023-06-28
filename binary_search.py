@@ -1,3 +1,6 @@
+from quicksort import quicksort
+
+
 def pesquisaBinaria(lista, item):
     baixo = 0
     alto = len(lista) - 1
@@ -17,8 +20,10 @@ def pesquisaBinaria(lista, item):
 
 listaDeEntrada = input("digite os elementos separados por espaco: ")
 lista = [int(elemento) for elemento in listaDeEntrada.split()]
+listaOrdenada = quicksort(lista)
 
 elementoDeEntrada = input("digite o elemento que deseja buscar na lista: ")
 elementoInteiro = int(elementoDeEntrada)
 
-print(pesquisaBinaria(lista, elementoInteiro))
+print(listaOrdenada)
+print(pesquisaBinaria(listaOrdenada, elementoInteiro))
