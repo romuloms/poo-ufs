@@ -1,6 +1,9 @@
 from ClockDisplay import ClockDisplay
 
 
-relogio = ClockDisplay()
-relogio.timeTick(6)
-relogio.display()
+clock = ClockDisplay(9, 55, 56)
+clock.getTime()
+
+for i in range(80):
+    clock.timeTick()
+    clock.getTime()
