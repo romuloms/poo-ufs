@@ -16,8 +16,8 @@ def pesquisaBinaria(lista, item):
 
 
 listaDeEntrada = input("digite os elementos separados por espaco: ")
-
 lista = [int(elemento) for elemento in listaDeEntrada.split()]
+
 elementoDeEntrada = input("digite o elemento que deseja buscar na lista: ")
 elementoInteiro = int(elementoDeEntrada)
 
