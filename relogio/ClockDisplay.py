@@ -31,3 +31,8 @@ class ClockDisplay:
 
     def getTime(self):
         print(self.__displayString)
+
+    def runClock(self, timeInSeconds):
+        for i in range(timeInSeconds):
+            self.timeTick()
+            self.getTime()
