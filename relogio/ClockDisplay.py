@@ -11,8 +11,12 @@ class ClockDisplay:
         self.__seconds = NumberDisplay(60)
         self.__displayString = ""
         self.setTime(hours, minutes, seconds)
-        self.updateDisplay()
+        self.updateStrDisplay()
 
+    def updateStrDisplay(self):
+        # function to save the display on a string
+        self.__displayString = str(self.__hours.displayValue()) + ":" + str(self.__minutes.displayValue()) + ":" + str(self.__seconds.displayValue())
+    
     def timeTick(self):
         # adds 1 second to the seconds value
         self.__seconds.increment()
@@ -25,11 +29,7 @@ class ClockDisplay:
                 self.__hours.increment()
         
         # update the display string
-        self.updateDisplay()
-        
-    def updateDisplay(self):
-        # function to save the display on a string
-        self.__displayString = str(self.__hours.displayValue()) + ":" + str(self.__minutes.displayValue()) + ":" + str(self.__seconds.displayValue())
+        self.updateStrDisplay()
 
     def setTime(self, hour, minute, second):
         # setting the starting time
@@ -37,9 +37,9 @@ class ClockDisplay:
         self.__minutes.setValue(minute)
         self.__seconds.setValue(second)
         # update the display string
-        self.updateDisplay()
+        self.updateStrDisplay()
 
-    def getTime(self):
+    def showTime(self):
         # function to show current display on terminal
         print(self.__displayString)
 
@@ -47,4 +47,4 @@ class ClockDisplay:
         # loop function to increment the time and show every second passing on terminal
         for i in range(timeInSeconds):
             self.timeTick()
-            self.getTime()
+            self.showTime()
