@@ -3,10 +3,21 @@ from professorUFS import ProfessorUFS
 
 prof1 = ProfessorUFS("Rom", 2020001, 15)
 
-print(f"Professor 1:\nName: {prof1.getName()}, Registration: {prof1.getRegistration()}, Workload: {prof1.getWorkload()}")
+print(f"Professor 1:\nName: {prof1.getName()}, Registration: {prof1.getRegistration()}, Workload: {prof1.getWorkload()}h")
 
-prof1.addHours(6)
-print(f"New workload: {prof1.getWorkload()}")
+userChoice = 0
 
-prof1.decreaseHours(2)
-print(f"New workload: {prof1.getWorkload()}")
+while userChoice != 3:
+    userChoice = int(input("Type 1 to add hours to professor\'s workload, 2 to decrease or 3 to leave: "))
+    if userChoice == 1:
+        amount = int(input("Type how many hours you wish to add: "))
+        prof1.addHours(amount)
+        print(f"New workload: {prof1.getWorkload()}h")
+    elif userChoice == 2:
+        amount = int(input("Type how many hours you wish to decrease: "))
+        prof1.decreaseHours(amount)
+        print(f"New workload: {prof1.getWorkload()}h")
+    elif userChoice == 3:
+        break
+    else:
+        print("Invalid choice.")
