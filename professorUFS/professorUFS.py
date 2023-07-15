@@ -1,8 +1,8 @@
 class ProfessorUFS:
-    def __init__(self, name, registration, workload):
+    def __init__(self, name, registration):
         self._name = str(name)
         self._registration = str(registration)
-        self._workload = int(workload)
+        self._workload = 8
         self._minWorkload = 8
         self._maxWorkload = 20
 
