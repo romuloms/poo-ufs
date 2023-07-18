@@ -45,3 +45,7 @@ class Fraction:
     
     def simplify(self):
         pass
+
+    def __str__(self):
+        representation = "{}/{}".format(self._numerator, self._denominator)
+        return representation

@@ -9,4 +9,4 @@ sumab = a.sum(b)
 mul = b.multiply(a)
 
 rev = a.reverse()
-print(rev._denominator)
+print(rev)
