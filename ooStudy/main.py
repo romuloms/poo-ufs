@@ -1,12 +1,13 @@
 from fracao import Fraction
 
 
-a = Fraction(4, 5)
-b = Fraction(3, 5)
+firstFraction = Fraction(2, 3)
+secondFraction = Fraction(3, 2)
 
-sumab = a.sum(b)
+sumFirstSecond = firstFraction.sum(secondFraction)
 
-mul = b.multiply(a)
+mult = secondFraction.multiply(firstFraction)
 
-rev = a.reverse()
-print(rev)
+rev = firstFraction.reverse()
+list = [2, 'LUL', firstFraction]
+print(sumFirstSecond)

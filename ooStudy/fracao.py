@@ -20,10 +20,8 @@ class Fraction:
             num = self._numerator + fraction._numerator
             den = self._denominator
             return Fraction(num, den)
-        num = self._numerator * fraction._denominator - fraction._numerator * self._denominator
+        num = self._numerator * fraction._denominator + fraction._numerator * self._denominator
         den = self._denominator * fraction._denominator
-        if num < 0:
-            num = -num
         return Fraction(num, den)
     
     def subtract(self, fraction):
@@ -48,4 +46,8 @@ class Fraction:
 
     def __str__(self):
         representation = "{}/{}".format(self._numerator, self._denominator)
+        return representation
+
+    def __repr__(self):
+        representation = "Fraction({}, {})".format(self._numerator, self._denominator)
         return representation
