@@ -51,3 +51,18 @@ class Fraction:
     def __repr__(self):
         representation = "Fraction({}, {})".format(self._numerator, self._denominator)
         return representation
+    
+    def __add__(self, other):
+        return self.sum(other)
+    
+    def __sub__(self, other):
+        return self.subtract(other)
+    
+    def __mul__(self, other):
+        return self.multiply(other)
+    
+    def __ge__(self, other):
+        pass
+
+    def __neg__(self):
+        return self.reverseSignal()
