@@ -1,7 +1,7 @@
 from fracao import Fraction
 
 
-fractionA = Fraction(2, 7)
+fractionA = Fraction(8, 4)
 fractionB = Fraction(1, 5)
 
 # sumFirstSecond = firstFraction.sum(secondFraction)
@@ -15,7 +15,9 @@ fractionB = Fraction(1, 5)
 add = fractionA + fractionB
 sub = fractionA - fractionB
 neg = -fractionA
+simpl = fractionA.simplify()
 
-print(add)
-print(sub)
-print(neg)
+# print(add)
+# print(sub)
+# print(neg)
+print(simpl)

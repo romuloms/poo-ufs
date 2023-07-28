@@ -9,47 +9,59 @@
 class Fraction:
 
     def __init__(self, numerator, denominator):
-        self._numerator = numerator
+        self.__numerator = numerator
         if denominator == 0:
-            self._denominator = 1
+            self.__denominator = 1
         else:
-            self._denominator = denominator
+            self.__denominator = denominator
 
     def sum(self, fraction):
-        if self._denominator == fraction._denominator:
-            num = self._numerator + fraction._numerator
-            den = self._denominator
+        if self.__denominator == fraction.__denominator:
+            num = self.__numerator + fraction.__numerator
+            den = self.__denominator
             return Fraction(num, den)
-        num = self._numerator * fraction._denominator + fraction._numerator * self._denominator
-        den = self._denominator * fraction._denominator
+        num = self.__numerator * fraction.__denominator + fraction.__numerator * self.__denominator
+        den = self.__denominator * fraction.__denominator
         return Fraction(num, den)
     
     def subtract(self, fraction):
         return self.sum(fraction.reverseSignal())
 
     def multiply(self, fraction):
-        num = self._numerator * fraction._numerator
-        den = self._denominator * fraction._denominator
+        num = self.__numerator * fraction.__numerator
+        den = self.__denominator * fraction.__denominator
         return Fraction(num, den)
     
     def divide(self, fraction):
         return self.multiply(fraction.reverse())
 
     def reverse(self):
-        return Fraction(self._denominator, self._numerator)
+        return Fraction(self.__denominator, self.__numerator)
 
     def reverseSignal(self):
-        return Fraction(-self._numerator, self._denominator)
+        return Fraction(-self.__numerator, self.__denominator)
+    
+    def calcMDC(self, n, d):
+        if (n == d):
+            return n
+        elif (n < d):
+            return self.calcMDC(d, n)
+        elif (d < n):
+            return self.calcMDC(n-d, d)
+        
     
     def simplify(self):
-        pass
+        factor = self.calcMDC(self.__numerator, self.__denominator)
+        newNum = int(self.__numerator/factor)
+        newDen = int(self.__denominator/factor)
+        return Fraction(newNum, newDen)
 
     def __str__(self):
-        representation = "{}/{}".format(self._numerator, self._denominator)
+        representation = "{}/{}".format(self.__numerator, self.__denominator)
         return representation
 
     def __repr__(self):
-        representation = "Fraction({}, {})".format(self._numerator, self._denominator)
+        representation = "Fraction({}, {})".format(self.__numerator, self.__denominator)
         return representation
     
     def __add__(self, other):
