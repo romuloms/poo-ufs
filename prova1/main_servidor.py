@@ -14,9 +14,13 @@ def main():
 	
 	## Teste dos setters
 	servidor01.setSalarioServidor(-1) ## Testa para tentativa de colocar valores negativos ao salario
+	print('salario negativo: {}'.format(servidor01.getSalarioServidor()))
+
 	servidor01.setSalarioServidor(100)
 	servidor01.setNumeroMatricula(12000) ## Testa para tentativa de colocar um valor maior de 4 digitos no numero de matricula
 	servidor01.setNumeroMatricula(-1) ## Testa para tentativa de atribuir um valor negativo a matricula
+	print('mat negativa: {}'.format(servidor01.getNumeroMatricula()))
+
 	servidor01.setNumeroMatricula(400)
 	servidor01.setNomeServidor('Robson')
 	print(servidor01.getNomeServidor())

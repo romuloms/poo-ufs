@@ -2,12 +2,12 @@
 
 
 
-from servidor import Servidor
+# from servidor import Servidor
 
 class ColecaoServidor:
 	
 	def __init__(self):
-		self.__servidores = []
+		self.__servidores = list()
 
 	def inserirServidor(self, novoServidor):
 		self.__servidores.append(novoServidor)
@@ -21,7 +21,7 @@ class ColecaoServidor:
 	def listarServidores(self):
 		cont = 0
 		while(cont < self.numeroDeServidores()):
-			print(self.__servidores[cont].getNomeServidor())
+			print(self.__servidores[cont])
 			cont += 1
 	
 	## Função que informa se um dado servidor (através do nome) está na coleção ou nao

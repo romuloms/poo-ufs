@@ -27,6 +27,7 @@ class Servidor:
 	def setSalarioServidor(self, novoSalarioServidor):
 		if novoSalarioServidor < 0:
 			print('Nao possivel atribuir valores negativos ao salario')
+			return
 		else:
 			self.__salarioServidor = novoSalarioServidor
 	
@@ -36,8 +37,12 @@ class Servidor:
 	def setNumeroMatricula(self, novoNumeroMatricula):
 		if novoNumeroMatricula >= 0 and novoNumeroMatricula < 10000:
 			self.__numeroMatricula = novoNumeroMatricula
-		print('O numero de matricula pode conter no máximo 4 digitos')
+		print('O numero de matricula deve conter no máximo 4 digitos')
 	
 	def imprimeDadosServidor(self):
 		print('Nome: {} | Salario: {} | Numero de Matricula: {}'.format(self.getNomeServidor(), self.getSalarioServidor(), self.getNumeroMatricula()))
 		# print(f'nome: {self.getNomeServidor()} | Salario: {self.getSalarioServidor()}')
+
+	def __str__(self):
+		representation = 'Nome: {} | Salario: {} | Numero de Matricula: {}'.format(self.getNomeServidor(), self.getSalarioServidor(), self.getNumeroMatricula())
+		return representation

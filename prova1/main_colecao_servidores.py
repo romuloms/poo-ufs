@@ -5,10 +5,10 @@ from colecao_servidores import ColecaoServidor
 
 def main():
 	##Criação de objetos da classe Servidor:
-	servidor = Servidor('itor',500)
-	servidor01 = Servidor('ser01',500)
-	servidor02 = Servidor('ser02',500)
-	servidor03 = Servidor('ser03',500)
+	servidor = Servidor('itor', 500)
+	servidor01 = Servidor('ser01', 500)
+	servidor02 = Servidor('ser02', 500)
+	servidor03 = Servidor('ser03', 500)
 	
 	
 	## Teste da função de inserir um servidor na colecao
@@ -18,14 +18,14 @@ def main():
 	colecaoServidor.inserirServidor(servidor02)
 	colecaoServidor.inserirServidor(servidor03)
 	
-	print('\n\n\nTeste da função numero de servidores: ')
+	print('\n\nTeste da função numero de servidores: ')
 	print(colecaoServidor.numeroDeServidores())
 	
 	
 	print('Teste da função de imprimir todos os servidores da lista')
 	colecaoServidor.listarServidores()
 
-	print('-----------\n\n\n')
+	print('-----------\n\n')
 	
 	## Teste de remover servidor da coleção
 	colecaoServidor.removerServidor(servidor)
