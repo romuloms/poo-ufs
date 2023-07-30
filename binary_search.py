@@ -15,15 +15,18 @@ def pesquisaBinaria(lista, item):
         else:
             baixo = meio + 1
 
-    return None
+    return baixo    # returns the position item should be if it is not in list
 
 
-listaDeEntrada = input("digite os elementos separados por espaco: ")
-lista = [int(elemento) for elemento in listaDeEntrada.split()]
-listaOrdenada = quicksort(lista)
+# listaDeEntrada = input("digite os elementos separados por espaco: ")
+# lista = [int(elemento) for elemento in listaDeEntrada.split()]
+# listaOrdenada = quicksort(lista)
 
-elementoDeEntrada = input("digite o elemento que deseja buscar na lista: ")
-elementoInteiro = int(elementoDeEntrada)
+# elementoDeEntrada = input("digite o elemento que deseja buscar na lista: ")
+# elementoInteiro = int(elementoDeEntrada)
 
-print(listaOrdenada)
-print(pesquisaBinaria(listaOrdenada, elementoInteiro))
+# print(listaOrdenada)
+# print(pesquisaBinaria(listaOrdenada, elementoInteiro))
+
+lista = [0, 2, 4]
+print(pesquisaBinaria(lista, 1))
