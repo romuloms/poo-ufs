@@ -16,8 +16,10 @@ add = fractionA + fractionB
 sub = fractionA - fractionB
 neg = -fractionA
 simpl = fractionA.simplify()
+ge = fractionA >= fractionB
 
 # print(add)
 # print(sub)
 # print(neg)
-print(simpl)
+# print(simpl)
+print(ge)
