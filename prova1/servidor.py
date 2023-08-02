@@ -6,7 +6,7 @@ class Servidor:
 	
 	def __init__(self, nomeServidor, salarioServidor):
 		self.__nomeServidor = nomeServidor
-		self.__numeroMatricula = randint(1, 10000)
+		self.__numeroMatricula = randint(1, 9999)
 		if salarioServidor >= 0:
 			self.__salarioServidor = salarioServidor
 		else:
