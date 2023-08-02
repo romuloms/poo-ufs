@@ -6,41 +6,41 @@ class ClockDisplay:
         # instance each value type with their limits
         # set the time to a starting one of your wanting
         # update the display string
-        self._hours = NumberDisplay(24)
-        self._minutes = NumberDisplay(60)
-        self._seconds = NumberDisplay(60)
-        self._displayString = ""
+        self.__hours = NumberDisplay(24)
+        self.__minutes = NumberDisplay(60)
+        self.__seconds = NumberDisplay(60)
+        self.__displayString = ""
         self.setTime(hours, minutes, seconds)
 
-    def _updateStrDisplay(self):
+    def __updateStrDisplay(self):
         # function to save the display on a string
-        self._displayString = str(self._hours.displayValue()) + ":" + str(self._minutes.displayValue()) + ":" + str(self._seconds.displayValue())
+        self.__displayString = str(self.__hours.displayValue()) + ":" + str(self.__minutes.displayValue()) + ":" + str(self.__seconds.displayValue())
     
     def timeTick(self):
         # adds 1 second to the seconds value
-        self._seconds.increment()
+        self.__seconds.increment()
 
-        if (self._seconds.getValue() == 0):
+        if (self.__seconds.getValue() == 0):
             # adds 1 minute to the minute value if it has passed 60 seconds
-            self._minutes.increment()
-            if (self._minutes.getValue() == 0):
+            self.__minutes.increment()
+            if (self.__minutes.getValue() == 0):
                 # adds 1 hour to the hour value if it has passed 60 minutes
-                self._hours.increment()
+                self.__hours.increment()
         
         # update the display string
-        self._updateStrDisplay()
+        self.__updateStrDisplay()
 
     def setTime(self, hour, minute, second):
         # setting the starting time
-        self._hours.setValue(hour)
-        self._minutes.setValue(minute)
-        self._seconds.setValue(second)
+        self.__hours.setValue(hour)
+        self.__minutes.setValue(minute)
+        self.__seconds.setValue(second)
         # update the display string
-        self._updateStrDisplay()
+        self.__updateStrDisplay()
 
     def showTime(self):
         # function to show current display on terminal
-        print(self._displayString)
+        print(self.__displayString)
 
     def runClock(self, timeInSeconds):
         # loop function to increment the time and show every second passing on terminal
