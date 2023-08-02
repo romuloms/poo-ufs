@@ -20,7 +20,6 @@ class Plano:
 
     def verificaPonto(self, p):
         for ponto in self.__pontos:
-            if self.__pontos.count(p) > 0:
+            if ponto == p:
                 return True
-            else:
-                return False
+        return False
