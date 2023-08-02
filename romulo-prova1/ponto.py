@@ -2,10 +2,8 @@ import math
 
 class Ponto:
     def __init__(self, x=0, y=0):
-        self.__x = 0
-        self.__y = 0
-        self.setX(x)
-        self.setY(y)
+        self.__x = x
+        self.__y = y
 
     def getX(self):
         return self.__x
