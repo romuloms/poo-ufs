@@ -1,7 +1,6 @@
 ## Questão 3
 
 
-
 # from servidor import Servidor
 
 class ColecaoServidor:
@@ -30,5 +29,3 @@ class ColecaoServidor:
 			if nomeServidor == servidor.getNomeServidor():
 				return True
 		return False		
-	
-
