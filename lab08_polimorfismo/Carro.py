@@ -17,4 +17,5 @@ class Carro(Veiculo):
             self.__numeroPortas = num
 
     def imprime(self):
-        print(f"{super().imprime()}\nNumero portas: {str(self.__numeroPortas)}\n-----------------")
+        # print(f"{super().imprime()}\nNumero portas: {str(self.__numeroPortas)}\n-----------------")
+        print("{}\nNumero portas: {}\n-----------------".format(super().imprime(), str(self.__numeroPortas)))

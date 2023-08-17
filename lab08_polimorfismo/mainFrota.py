@@ -17,4 +17,5 @@ frota.inserirVeiculo(bike)
 frota.inserirVeiculo(moto2)
 
 frota.removerVeiculo(bike)
-frota.localizarVeiculo("jkl101")
+# frota.localizarVeiculo("jkl101")
+frota.listarVeiculos()
