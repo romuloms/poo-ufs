@@ -13,7 +13,7 @@ class Veiculo:
 
 	def setFabricanteVeiculo(self, fabricanteVeiculo):
 		if len(fabricanteVeiculo) == 0:
-			print ("Fabricante de veiculo vazio")
+			print ("Fabricante de veiculo nao infomado")
 		else:
 			self._fabricanteVeiculo = fabricanteVeiculo
 
@@ -22,7 +22,7 @@ class Veiculo:
 
 	def setPlacaVeiculo(self, placaVeiculo):
 		if len(placaVeiculo) == 0:
-			print ("Placa de veiculo vazio")
+			print ("Placa de veiculo nao infomado")
 		else:
 			self._placaVeiculo = placaVeiculo
 
@@ -30,16 +30,16 @@ class Veiculo:
 		return self._numeroRodas
 
 	def setNumeroRodas(self, numeroRodas):
-		if numeroRodas <= 0:
-			print ("Numero de rodas invalido")
-		else:
+		if numeroRodas > 0:
 			self._numeroRodas = numeroRodas
+		else:
+			print ("Numero de rodas invalido")
 
 	def getTipoVeiculo(self):
 		return self._tipoVeiculo
 
 	def setTipoVeiculo(self, tipoVeiculo):
 		if len(tipoVeiculo) == 0:
-			print ("Tipo de veiculo vazio")
+			print ("Tipo de veiculo nao infomado")
 		else:
 			self._tipoVeiculo = tipoVeiculo

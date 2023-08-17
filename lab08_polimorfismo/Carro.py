@@ -11,10 +11,10 @@ class Carro(Veiculo):
         return self.__numeroPortas
     
     def setNumeroPortas(self, num):
-        if num <= 0:
-            print("Valor invalido")
-        else:
+        if num > 0:
             self.__numeroPortas = num
+        else:
+            print("Valor invalido")
 
     def imprime(self):
         # print(f"{super().imprime()}\nNumero portas: {str(self.__numeroPortas)}\n-----------------")

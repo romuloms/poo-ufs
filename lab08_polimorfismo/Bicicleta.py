@@ -11,10 +11,10 @@ class Bicicleta(Veiculo):
         return self.__numeroMarchas
     
     def setNumeroMarchas(self, num):
-        if num <= 0:
-            print("Valor invalido")
-        else:
+        if num > 0:
             self.__numeroMarchas = num
+        else:
+            print("Valor invalido")
 
     def imprime(self):
         print(f"{super().imprime()}\nNumero de marchas: {str(self.__numeroMarchas)}\n-----------------")
