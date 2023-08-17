@@ -1,7 +1,4 @@
 from Veiculo import Veiculo
-from Moto import Moto
-from Carro import Carro
-from Bicicleta import Bicicleta
 
 
 class Frota:

@@ -1,7 +1,6 @@
 from Moto import Moto
 from Carro import Carro
 from Bicicleta import Bicicleta
-from Veiculo import Veiculo
 
 
 moto = Moto("abc123", "Honda", 2, "", 150)
