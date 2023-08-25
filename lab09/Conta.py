@@ -1,7 +1,7 @@
 class Conta:
 
     def __init__(self, nomeCorrentista, numeroConta):
-        self.__nomeCorrentista = ""
+        self.__nomeCorrentista = "Vazio"
         self.__numeroConta = 0
         self.__saldo = 0
         self.__ativa = True

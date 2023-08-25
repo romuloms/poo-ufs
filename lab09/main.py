@@ -35,9 +35,8 @@ tentarSaque(1550)
 tentarDeposito(30)
 
 try:
-    # conta1.setNomeCorrentista("lau")
+    conta1.setNomeCorrentista("Lau")
     conta1.setNumeroConta("44")
-
 except ValueError as erro:
     print(erro)
 
