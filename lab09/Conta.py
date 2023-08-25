@@ -9,10 +9,12 @@ class Conta:
         self.setNumeroConta(numeroConta)
 
     def imprimeConta(self):
+        print("--- Dados da conta ---")
         print(self.getNomeCorrentista())
         print(self.getNumeroConta())
         print(self.getSaldo())
         print(self.getAtiva())
+        print("----------------------")
 
     def deposito (self, valor):
         if (valor < 0):
@@ -45,9 +47,9 @@ class Conta:
         return self.__numeroConta
     
     def setNumeroConta (self, numeroConta):
-        if numeroConta <= 0:
+        if type(numeroConta) == int and numeroConta <= 0:
             raise ValueError("O numero da conta nao pode ser negativo")
-        elif type(numeroConta) != int:
+        if type(numeroConta) != int:
             raise ValueError("O numero da conta deve ser um inteiro")
         else:
             self.__numeroConta = numeroConta

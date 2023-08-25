@@ -25,17 +25,20 @@ def tentarDeposito(valor):
     tentativas = 0
     while (not sucesso) and (tentativas < 3):
         try:
-            conta1.deposito(-580)
+            conta1.deposito(valor)
             sucesso = True
         except ValueError as erro:
             print(erro)
             tentativas += 1
 
-try:
-    conta1.setNomeCorrentista("")
-    conta1.setNumeroConta("4444")
+tentarSaque(1550)
+tentarDeposito(30)
 
-except:
-    print("Erro")
+try:
+    # conta1.setNomeCorrentista("lau")
+    conta1.setNumeroConta("44")
+
+except ValueError as erro:
+    print(erro)
 
 conta1.imprimeConta()
