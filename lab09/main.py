@@ -15,7 +15,6 @@ def tentarSaque(valor):
         except ValueError as erro:
             print(erro)
             tentativas += 1
-
     if not sucesso:
         print("Nao foi possivel realizar o saque")
         tentativas = 0
@@ -30,6 +29,9 @@ def tentarDeposito(valor):
         except ValueError as erro:
             print(erro)
             tentativas += 1
+    if not sucesso:
+        print("Nao foi possivel realizar o deposito")
+        tentativas = 0
 
 tentarSaque(1550)
 tentarDeposito(30)
