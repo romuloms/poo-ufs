@@ -12,6 +12,3 @@ class CommandWord(Enum):
     def __str__(self):
         return self.commandString
     
-# if __name__ == "__main__":
-#     cm = CommandWord("go")
-#     print(cm)
