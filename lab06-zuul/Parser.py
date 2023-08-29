@@ -3,8 +3,7 @@ from Command import Command
 
 class Parser:
     def __init__(self):
-        self.commands = CommandWords()
-        self.reader = input
+        self.__commands = CommandWords()
 
     def getCommand(self):
         input_line = input("> ")
@@ -24,4 +23,10 @@ class Parser:
         return Command(word1, word2)
 
     def showCommands(self):
-        self.commands.showAll()
+        self.__commands.showAll()
+
+# Exemplo de uso
+parser = Parser()
+parser.showCommands()
+command = parser.getCommand()
+print(f"Command word: {command.getCommandWord()}, Second word: {command.getSecondWord()}")

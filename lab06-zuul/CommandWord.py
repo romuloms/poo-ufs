@@ -7,8 +7,8 @@ class CommandWord(Enum):
     UNKNOWN = "?"
 
     def __init__(self, commandString):
-        self.commandString = commandString
+        self.__commandString = commandString
 
     def __str__(self):
-        return self.commandString
+        return self.__commandString
     
