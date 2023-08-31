@@ -36,14 +36,17 @@ class Game:
 		pub = Room("in the campus pub")
 		lab = Room("in a computing lab")
 		office = Room("in the computing admin office")
-		
+		upstairs = Room("upstairs")
+		basement = Room("in the basement")
         
 		# initialise room exits
-		outside.setExits(None, theatre, lab, pub)
-		theatre.setExits(None, None, None, outside)
-		pub.setExits(None, outside, None, None)
-		lab.setExits(outside, office, None, None)
-		office.setExits(None, None, None, lab)
+		outside.setExits(None, theatre, lab, pub, None, None)
+		theatre.setExits(None, None, None, outside, None, None)
+		pub.setExits(None, outside, None, None, None, None)
+		lab.setExits(outside, office, None, None, None, None)
+		office.setExits(None, None, None, lab, upstairs, basement)
+		upstairs.setExits(None, None, None, None, None, office)
+		basement.setExits(None, None, None, None, office, None)
         
 		self.currentRoom = outside  ## start game outside
 
@@ -74,14 +77,18 @@ class Game:
 		print("You are " + self.currentRoom.getDescription())
 		exits = ""
         
-		if(self.currentRoom.northExit != None):
+		if(self.currentRoom.northExit is not None):
 			exits += "north "
-		if(self.currentRoom.eastExit != None):
+		if(self.currentRoom.eastExit is not None):
 			exits += "east "
-		if(self.currentRoom.southExit != None):
+		if(self.currentRoom.southExit is not None):
 			exits += "south "
-		if(self.currentRoom.westExit != None):
+		if(self.currentRoom.westExit is not None):
 			exits += "west "
+		if(self.currentRoom.upExit is not None):
+			exits += "up "
+		if(self.currentRoom.downExit is not None):
+			exits += "down "
         
 		print("Exits: " + exits)
 
@@ -145,6 +152,10 @@ class Game:
 			nextRoom = self.currentRoom.westExit
 		if (direction == "south"):
 			nextRoom = self.currentRoom.southExit
+		if (direction == "up"):
+			nextRoom = self.currentRoom.upExit
+		if (direction == "down"):
+			nextRoom = self.currentRoom.downExit
 		if (nextRoom == None):
 			print("There is no door!")
 		else:
@@ -153,14 +164,18 @@ class Game:
 			print("You are " + self.currentRoom.getDescription())
 			exits = ""
         
-			if(self.currentRoom.northExit != None):
+			if(self.currentRoom.northExit is not None):
 				exits += "north "
-			if(self.currentRoom.eastExit != None):
+			if(self.currentRoom.eastExit is not None):
 				exits += "east "
-			if(self.currentRoom.southExit != None):
+			if(self.currentRoom.southExit is not None):
 				exits += "south "
-			if(self.currentRoom.westExit != None):
+			if(self.currentRoom.westExit is not None):
 				exits += "west "
+			if(self.currentRoom.upExit is not None):
+				exits += "up "
+			if(self.currentRoom.downExit is not None):
+				exits += "down "
         
 			print("Exits: " + exits)
 
