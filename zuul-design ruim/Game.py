@@ -40,13 +40,18 @@ class Game:
 		basement = Room("in the basement")
         
 		# initialise room exits
-		outside.setExits(None, theatre, lab, pub, None, None)
-		theatre.setExits(None, None, None, outside, None, None)
-		pub.setExits(None, outside, None, None, None, None)
-		lab.setExits(outside, office, None, None, None, None)
-		office.setExits(None, None, None, lab, upstairs, basement)
-		upstairs.setExits(None, None, None, None, None, office)
-		basement.setExits(None, None, None, None, office, None)
+		outside.setExits("east", theatre)
+		outside.setExits("south", lab)
+		outside.setExits("west", pub)
+		theatre.setExits("west", outside)
+		pub.setExits("south", outside)
+		lab.setExits("north", outside)
+		lab.setExits("east", office)
+		office.setExits("west", lab)
+		office.setExits("up", upstairs)
+		office.setExits("down", basement)
+		upstairs.setExits("down", office)
+		basement.setExits("up", office)
         
 		self.currentRoom = outside  ## start game outside
 
@@ -73,25 +78,7 @@ class Game:
 		print("\nWelcome to the World of Zuul!")
 		print("World of Zuul is a new, incredibly boring adventure game.")
 		print("Type 'help' if you need help.\n")
-        
-		print("You are " + self.currentRoom.getDescription())
-		exits = ""
-        
-		if(self.currentRoom.northExit is not None):
-			exits += "north "
-		if(self.currentRoom.eastExit is not None):
-			exits += "east "
-		if(self.currentRoom.southExit is not None):
-			exits += "south "
-		if(self.currentRoom.westExit is not None):
-			exits += "west "
-		if(self.currentRoom.upExit is not None):
-			exits += "up "
-		if(self.currentRoom.downExit is not None):
-			exits += "down "
-        
-		print("Exits: " + exits)
-
+		print(self.currentRoom.printLocationInfo())
 
 	'''
 	Given a command, process (that is: execute) the command.
@@ -142,43 +129,13 @@ class Game:
 		direction = command.getSecondWord()
 
         # Try to leave current room.
-        
-		nextRoom = None
-		if (direction == "north"):
-			nextRoom = self.currentRoom.northExit
-		if (direction == "east"):
-			nextRoom = self.currentRoom.eastExit
-		if (direction == "west"):
-			nextRoom = self.currentRoom.westExit
-		if (direction == "south"):
-			nextRoom = self.currentRoom.southExit
-		if (direction == "up"):
-			nextRoom = self.currentRoom.upExit
-		if (direction == "down"):
-			nextRoom = self.currentRoom.downExit
-		if (nextRoom == None):
-			print("There is no door!")
+		nextRoom = self.currentRoom.getExit(direction)
+		if nextRoom == None:
+			print("There is no door.")
 		else:
 			self.currentRoom = nextRoom
-            
-			print("You are " + self.currentRoom.getDescription())
-			exits = ""
-        
-			if(self.currentRoom.northExit is not None):
-				exits += "north "
-			if(self.currentRoom.eastExit is not None):
-				exits += "east "
-			if(self.currentRoom.southExit is not None):
-				exits += "south "
-			if(self.currentRoom.westExit is not None):
-				exits += "west "
-			if(self.currentRoom.upExit is not None):
-				exits += "up "
-			if(self.currentRoom.downExit is not None):
-				exits += "down "
-        
-			print("Exits: " + exits)
-
+			print(self.currentRoom.printLocationInfo())
+		
 	''' 
 	"Quit" was entered. Check the rest of the command to see
 	whether we really quit the game.
