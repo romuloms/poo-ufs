@@ -22,12 +22,13 @@ class Room:
 	'''
 	def __init__(self, description):
 		self.description = description
-		self.northExit = None
-		self.southExit = None
-		self.eastExit = None
-		self.westExit = None
-		self.upExit = None
-		self.downExit = None
+		self.exits = {}
+		# self.northExit = None
+		# self.southExit = None
+		# self.eastExit = None
+		# self.westExit = None
+		# self.upExit = None
+		# self.downExit = None
 	
 	'''
 	Define the exits of this room.  Every direction either leads
@@ -37,22 +38,33 @@ class Room:
 	@param south The south exit.
 	@param west The west exit.
 	'''
-	def setExits(self, north, east, south, west, up, down):
-		if north is not None:
-			self.northExit = north
-		if east is not None:
-			self.eastExit = east
-		if south is not None:
-			self.southExit = south
-		if west is not None:
-			self.westExit = west
-		if up is not None:
-			self.upExit = up
-		if down is not None:
-			self.downExit = down
+	def setExits(self, direction, neighbor):
+		self.exits[direction] = neighbor
+		# if north is not None:
+		# 	self.northExit = north
+		# if east is not None:
+		# 	self.eastExit = east
+		# if south is not None:
+		# 	self.southExit = south
+		# if west is not None:
+		# 	self.westExit = west
+		# if up is not None:
+		# 	self.upExit = up
+		# if down is not None:
+		# 	self.downExit = down
 
 	'''
 	@return The description of the room.
 	'''
 	def getDescription(self):
 		return self.description
+	
+	def printLocationInfo(self):
+		return f"You are {self.description}.\n{self.getExitString()}"
+
+	def getExitString(self):
+		return "Exits:" + " ".join(self.exits.keys())
+	
+	def getExit(self, direction):
+		return self.exits.get(direction)
+
