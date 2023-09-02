@@ -1,17 +1,13 @@
 from Parser import *
 from Room import *
+from CommandWords import *
 
 class Game:
-        
-	'''
-	Create the game and initialise its internal map.
-	'''
+    # create the game and initialize the map
 	def __init__(self):
 		self.__createRooms()
 		self.__parser = Parser()
-	'''
-	Create all the rooms and link their exits together.
-	'''
+	# create the rooms and the exits
 	def __createRooms(self):
 		# create the rooms
 		outside = Room("outside the main entrance of the university")
@@ -36,38 +32,25 @@ class Game:
 		upstairs.setExits("down", office)
 		basement.setExits("up", office)
         
-		self.currentRoom = outside  ## start game outside
+		self.currentRoom = outside  # start game outside
 
-	'''
-	Main play routine.  Loops until end of play.
-	'''
+	# game loop
 	def play(self):          
 		self.__printWelcome()
 
-		## Enter the main command loop.  Here we repeatedly read commands and
-		## execute them until the game is over.
-                
+		# execute commands until quit command
 		finished = False
 		while (not finished):
 			command = self.__parser.getCommand()
 			finished = self.__processCommand(command)
 		print("Thank you for playing.  Good bye.")
 
-	'''
-	Print out the opening message for the player.
-	'''
-   
 	def __printWelcome(self):
 		print("\nWelcome to the World of Zuul!")
 		print("World of Zuul is a new, incredibly boring adventure game.")
 		print("Type 'help' if you need help.\n")
 		print(self.currentRoom.printLocationInfo())
 
-	'''
-	Given a command, process (that is: execute) the command.
-	@param command The command to be processed.
-	@return true If the command ends the game, false otherwise.
-	'''
 	def __processCommand(self, command):
 		wantToQuit = False
 
@@ -85,24 +68,12 @@ class Game:
 
 		return wantToQuit
 
-    # implementations of user commands:
-
-	'''
-	Print out some help information.
-	Here we print some stupid, cryptic message and a list of the 
-	command words.
-	'''
 	def __printHelp(self):
 		print("You are lost. You are alone. You wander")
 		print("around at the university.\n")
 		print("Your command words are:")
 		print("   go quit help")
 
-	'''
-	Try to go to one direction. If there is an exit, enter
-	the new room, otherwise print an error message.
-	'''
-	
 	def __goRoom(self, command):
 		if(not command.hasSecondWord()):
             # if there is no second word, we don't know where to go...
@@ -119,11 +90,7 @@ class Game:
 			self.currentRoom = nextRoom
 			print(self.currentRoom.printLocationInfo())
 		
-	''' 
-	"Quit" was entered. Check the rest of the command to see
-	whether we really quit the game.
-	@return true, if this command quits the game, false otherwise.
-	'''
+	# command to quit the game
 	def __quit(self, command):
 		if(command.hasSecondWord()):
 			print("Quit what?")
