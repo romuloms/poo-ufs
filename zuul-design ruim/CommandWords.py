@@ -28,5 +28,5 @@ class CommandWords:
             return True
         else:
             # we get here, the string was not found in the commands
-            return False;
+            return False
 
