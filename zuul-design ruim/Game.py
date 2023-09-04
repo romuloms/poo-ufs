@@ -38,6 +38,7 @@ class Game:
 		office = Room("in the computing admin office")
 		upstairs = Room("upstairs")
 		basement = Room("in the basement")
+		labBathroom = Room("in the lab bathroom")
         
 		# initialise room exits
 		outside.setExits("east", theatre)
@@ -47,11 +48,13 @@ class Game:
 		pub.setExits("south", outside)
 		lab.setExits("north", outside)
 		lab.setExits("east", office)
+		lab.setExits("west", labBathroom)
 		office.setExits("west", lab)
 		office.setExits("up", upstairs)
 		office.setExits("down", basement)
 		upstairs.setExits("down", office)
 		basement.setExits("up", office)
+		labBathroom.setExits("east", lab)
         
 		self.currentRoom = outside  ## start game outside
 
