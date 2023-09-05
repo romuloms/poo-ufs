@@ -48,13 +48,13 @@ class Game:
 		pub.setExits("south", outside)
 		lab.setExits("north", outside)
 		lab.setExits("east", office)
-		lab.setExits("west", labBathroom)
 		office.setExits("west", lab)
 		office.setExits("up", upstairs)
 		office.setExits("down", basement)
 		upstairs.setExits("down", office)
+		upstairs.setExits("west", labBathroom)
 		basement.setExits("up", office)
-		labBathroom.setExits("east", lab)
+		labBathroom.setExits("east", upstairs)
         
 		self.currentRoom = outside  ## start game outside
 
