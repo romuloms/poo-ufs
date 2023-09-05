@@ -135,6 +135,7 @@ class Game:
 		nextRoom = self.currentRoom.getExit(direction)
 		if nextRoom == None:
 			print("There is no door.")
+			print(self.currentRoom.getExitString())
 		else:
 			self.currentRoom = nextRoom
 			print(self.currentRoom.printLocationInfo())
