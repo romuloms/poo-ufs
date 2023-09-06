@@ -58,7 +58,7 @@ class Game:
 			print("I don't know what you mean...")
 			return False
 
-		commandWord = command.getCommandWord()
+		commandWord = command.getCommandWord()	# first word
 		if(commandWord == "help"):
 			self.__printHelp()
 		elif (commandWord == "go"):
@@ -86,6 +86,7 @@ class Game:
 		nextRoom = self.currentRoom.getExit(direction)
 		if nextRoom == None:
 			print("There is no door.")
+			print(self.currentRoom.getExitString())
 		else:
 			self.currentRoom = nextRoom
 			print(self.currentRoom.printLocationInfo())
