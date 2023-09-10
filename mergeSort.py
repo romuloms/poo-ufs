@@ -2,6 +2,7 @@ def mergeSort(arr):
     if len(arr) > 1:
         # Divide o array ao meio
         meio = len(arr) // 2
+        # OBS: [:] é similar ao spread operator ... 
         metadeEsquerda = arr[:meio]
         metadeDireita = arr[meio:]
         # Recursivamente, ordena as duas metades
