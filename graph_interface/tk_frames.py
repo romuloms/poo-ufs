@@ -1,11 +1,11 @@
 from tkinter import *
 
 top = Frame()
-top.pack()
+top.pack(fill="both", expand=True)
 a = Label(top, text="A")
-a.pack(side="left")
+a.pack(side="left", fill="y")
 b = Label(top, text="B")
-b.pack(side="bottom")
+b.pack(side="bottom", fill="x")
 c = Label(top, text="C")
 c.pack(side="right")
 d = Label(top, text="D")
