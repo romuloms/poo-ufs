@@ -16,7 +16,7 @@ cadastro.insereCandidato(candidatoIndigena2)
 cadastro.insereCandidato(candidatoComum)
 cadastro.insereCandidato(candidatoComum2)
 cadastro.numeroCandidatos()
-cadastro.listarCandidatosIndigenas()
+# cadastro.listarCandidatosIndigenas()
 
 try:
     cadastro.insereCandidato(2000)
@@ -33,4 +33,6 @@ try:
 except ValueError as erro:
     print(erro)
 
-cadastro.listarCandidatosIndigenas()
+# cadastro.listarCandidatosIndigenas()
+cadastro.listarCandidatos()
+cadastro.numeroCandidatos()

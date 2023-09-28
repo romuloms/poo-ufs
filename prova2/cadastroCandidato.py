@@ -19,6 +19,13 @@ class CadastroCandidato:
             if isinstance(candidatoI, CandidatoI):
                 candidatoI.imprimeDadosI()
     
+    def listarCandidatos(self):
+        for candidato in self.__cadastro:
+            if isinstance(candidato, Candidato):
+                candidato.imprimeDados()
+            elif isinstance(candidato, CandidatoI):
+                candidato.imprimeDadosI()
+
     def numeroCandidatos(self):
         print(f"Numero de candidatos: {len(self.__cadastro)}")
 
