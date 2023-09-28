@@ -29,6 +29,14 @@ class CadastroCandidato:
     def numeroCandidatos(self):
         print(f"Numero de candidatos: {len(self.__cadastro)}")
 
+    def tipoCandidato(self, candidato):
+        if isinstance(candidato, CandidatoI):
+            print(f"O candidato {candidato.getNome()} é do tipo Candidato Indigena.")
+        elif isinstance(candidato, Candidato):
+            print(f"O candidato {candidato.getNome()} é do tipo Candidato Comum.")
+        else:
+            print("Tipo desconhecido.")
+
     def removeCandidato(self, candidato):
         if isinstance(candidato, Candidato):
             self.__cadastro.remove(candidato)

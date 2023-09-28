@@ -36,3 +36,4 @@ except ValueError as erro:
 # cadastro.listarCandidatosIndigenas()
 cadastro.listarCandidatos()
 cadastro.numeroCandidatos()
+cadastro.tipoCandidato(candidatoIndigena)
