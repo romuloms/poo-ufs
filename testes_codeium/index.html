@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #counter {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+    <title>Counter Button</title>
+</head>
+<body>
+    <h1>Counter Button</h1>
+    <button onclick="incrementCounter()">Click to Increment</button>
+    <p id="counter">0</p>
+
+    <script>
+        let count = 0;
+        function incrementCounter() {
+            count++;
+            document.getElementById('counter').textContent = count;
+        }
+    </script>
+</body>
+</html>
